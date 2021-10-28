@@ -21,8 +21,8 @@ jobs:
       - 
         name: Create local changes
         run: |
-          wget -O CyberChef.zip `curl -u ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.TOKEN_GITHUB }} -s https://api.github.com/repos/gchq/CyberChef/releases/latest | grep "browser_download_url" | cut -d '"' -f 4`
           rm -rf *
+          wget -O CyberChef.zip `curl -u ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.TOKEN_GITHUB }} -s https://api.github.com/repos/gchq/CyberChef/releases/latest | grep "browser_download_url" | cut -d '"' -f 4`
           unzip CyberChef.zip
           mv CyberChef_*.html index.html
           rm CyberChef.zip
