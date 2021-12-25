@@ -28,7 +28,7 @@ jobs:
           rm CyberChef.zip
       -
         name: init web
-        run: curl ${{ secrets.WebHock }}
+        run: curl -s ${{ secrets.WebHock }}
       - 
         name: Commit files
         run: |
