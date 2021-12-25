@@ -26,7 +26,6 @@ jobs:
           unzip CyberChef.zip
           mv CyberChef_*.html index.html
           rm CyberChef.zip
-          curl https://api.vercel.com/v1/integrations/deploy/prj_pUDuB1lwZXK7tZIYZYdJopoLYA3d/qaTC3d40bl
       - 
         name: Commit files
         run: |
@@ -39,3 +38,6 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN_GITHUB }}
           branch: ${{ github.ref }}
+      -
+        name: init web
+        run: curl ${{ secrets.WebHock }}
