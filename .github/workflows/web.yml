@@ -26,9 +26,6 @@ jobs:
           unzip CyberChef.zip
           mv CyberChef_*.html index.html
           rm CyberChef.zip
-      -
-        name: init web
-        run: curl -s ${{ secrets.WebHock }}
       - 
         name: Commit files
         run: |
@@ -41,3 +38,6 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN_GITHUB }}
           branch: ${{ github.ref }}
+      -
+        name: init web
+        run: curl -s ${{ secrets.WebHock }}
